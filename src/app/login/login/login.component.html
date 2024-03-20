@@ -1,0 +1,36 @@
+<div id="wrapper">
+   <div class="containerr" id="content-wrapper">
+        <div class="form-container log-in-container">
+            <div class="fixed-top" role="alert" *ngIf="message" [ngClass]="{
+                'alert alert-success': message==='Connection reussi',
+                'alert alert-danger': message!=='Connection reussi'
+            }">
+                {{ message }}
+            </div>
+        <form [formGroup]="loginFrom">
+                <h1 >Login</h1>
+                <div class="reseausocial">
+                    <a href="http://"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="http://"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+                <span>or use your account</span>
+                <div>
+                    <input type="email" name="" id="" placeholder="Email" formControlName="email">
+                    <input type="password" name="" id="" placeholder="Password" formControlName="password">
+                </div>
+                <span>forget your password? Or <a routerLink='/register'>register</a></span>
+
+                <input type="submit" value="Login" class="btn btn-primary" (click)="login()">
+        </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>HTML CSS Login Form</h1>
+                    <p>This login form is created using pure HTML and CSS For social icons,FontAwersome is used</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

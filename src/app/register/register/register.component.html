@@ -1,0 +1,61 @@
+<div class="containerr">
+    <div class="form-container log-in-container">
+        <div class="alert alert-success fixed-top" role="alert" *ngIf="successMessage">
+            {{ successMessage }}
+          </div>
+        <form [formGroup]="signupFrom" >
+           <h1>Enregistrer Utilisateur</h1>
+                <input type="text" name="firstname" id="" formControlName="firstname" placeholder="Firstname">
+                <div *ngIf="signupFrom.get('firstname').errors?.required && signupFrom.get('firstname').touched" class="bg-danger">
+                    Le champ Nom est requis.
+                  </div>
+                <input type="text" name="lastname" id="" formControlName="lastname" placeholder="Lastname">
+                <div *ngIf="signupFrom.get('lastname').errors?.required && signupFrom.get('lastname').touched" class="bg-danger">
+                    Le champ Nom est requis.
+                  </div>
+                <input type="text" name="matricule" id="" formControlName="matricule" placeholder="matricule">
+                <div *ngIf="signupFrom.get('matricule').errors?.required && signupFrom.get('matricule').touched" class="bg-danger">
+                    Le champ Nom est requis.
+                  </div>
+                <input type="number" name="number" id="" formControlName="number" placeholder="Numero">
+                <div *ngIf="signupFrom.get('number').errors?.required && signupFrom.get('number').touched" class="bg-danger">
+                    Le champ number est requis.
+                  </div>
+                <input type="email" name="email" id="" formControlName="email" placeholder="Email">
+                <div *ngIf="signupFrom.get('email').errors?.required && signupFrom.get('email').touched" class="bg-danger">
+                    Le champ email est requis.
+                  </div>
+                <!-- <input type="text" name="role" id="" formControlName="role" placeholder="Role">
+                <div *ngIf="signupFrom.get('role').errors?.required && signupFrom.get('role').touched" class="bg-danger">
+                    Le champ email est requis.
+                  </div> -->
+
+                <select name="role_id" id="" class="form-control" formControlName="role_id">
+
+                  <option *ngFor="let item of optionRole" [value]="item.id">{{item.libelle}}</option>
+                </select>
+                <input type="password" name="password" id="" formControlName="password" placeholder="Password">
+                <div *ngIf="signupFrom.get('password').errors?.required && signupFrom.get('password').touched" class="bg-danger">
+                    Le champ email est requis.
+                  </div>
+                <input type="password" name="confirmpassword" id="" formControlName="confirmPassword" placeholder="Password">
+            
+                <div *ngIf="signupFrom.get('dateNais').errors?.required && signupFrom.get('dateNais').touched" class="bg-danger">
+                    Le champ email est requis.
+                  </div>
+                <input type="date" name="dateNais" id="" formControlName="dateNais" placeholder="Date de Naissance">
+                <!-- <input type="date" name="dateNais" id="" formControlName="dateNais" placeholder="Date de Naissance" [(ngModel)]="dateString" (ngModelChange)="formatDate()"> -->
+            
+
+            <input type="submit" value="Register"  class="btn btn-primary" (click)="adduser()">
+       </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>HTML CSS Login Form</h1>
+                <p>This login form is created using pure HTML and CSS For social icons,FontAwersome is used</p>
+            </div>
+        </div>
+    </div>
+</div>
